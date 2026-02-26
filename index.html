@@ -3,7 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>IDS 2935 Teaser</title>
+  <title>IDS 2935: All Too Well: Understanding Relationships through Taylor Swift</title>
+  <meta name="description" content="An in-person Fall 2026 course exploring Taylor Swift’s music, storytelling, and fandom to understand interpersonal communication, particularly love, friendship, identity, conflict, privacy, and digital intimacy." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
@@ -197,6 +198,8 @@
     }
 
     .main-title {
+      position: relative;
+      top: -6.6rem;
       width: min(900px, 90vw);
       text-align: center;
       opacity: 0;
@@ -211,24 +214,92 @@
       font-family: "Cinzel", Georgia, serif;
       font-weight: 700;
       letter-spacing: 0.03em;
-      text-transform: uppercase;
+      text-transform: none;
       font-size: clamp(1.35rem, 3.3vw, 2.75rem);
       line-height: 1.3;
       text-shadow: none;
     }
 
-    .main-title p {
+    .hero-lower {
+      position: absolute;
+      left: 50%;
+      bottom: 4.2rem;
+      width: min(920px, 92vw);
+      text-align: center;
+      transform: translateX(-50%) translateY(14px);
+      opacity: 0;
+      transition: opacity 700ms ease, transform 700ms ease;
+      z-index: 4;
+      pointer-events: auto;
+    }
+
+    .hero-lower .tagline {
       margin: 0.9rem 0 0;
       font-size: clamp(1rem, 1.7vw, 1.35rem);
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-      color: #fff8e6;
+      letter-spacing: 0.03em;
+      color: #fff2cf;
       text-shadow: none;
+    }
+
+    .hero-lower .hero-copy {
+      margin: 1rem auto 0;
+      max-width: 62ch;
+      font-size: clamp(0.98rem, 1.7vw, 1.14rem);
+      line-height: 1.55;
+      color: #f4f8ff;
+      text-shadow: 0 1px 1px rgba(0, 0, 0, 0.45);
+    }
+
+    .hero-ctas {
+      margin-top: 1.15rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+    }
+
+    .hero-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.65rem 1.05rem;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+      letter-spacing: 0.02em;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #f7fbff;
+      background: rgba(6, 12, 24, 0.4);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      transition: transform 120ms ease, background-color 120ms ease, border-color 120ms ease;
+    }
+
+    .hero-btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .hero-btn.primary {
+      background: rgba(248, 104, 36, 0.25);
+      border-color: rgba(255, 213, 164, 0.6);
+      box-shadow: 0 0 18px rgba(248, 104, 36, 0.2);
+    }
+
+    .hero-btn.secondary {
+      background: rgba(8, 16, 31, 0.42);
+      border-color: rgba(255, 255, 255, 0.35);
     }
 
     .teaser.done .main-title {
       opacity: 1;
       transform: scale(1) translateY(0);
+      pointer-events: auto;
+    }
+
+    .teaser.done .hero-lower {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
     }
 
     .scroll-indicator {
@@ -253,7 +324,6 @@
       position: relative;
       background: linear-gradient(180deg, rgba(2, 9, 22, 0.92) 0%, rgba(7, 16, 34, 0.95) 100%);
       padding: clamp(3rem, 7vw, 6rem) 1.2rem 4.5rem;
-      min-height: 190vh;
       overflow: hidden;
       isolation: isolate;
     }
@@ -355,6 +425,24 @@
     .card p + p,
     .card ul {
       margin-top: 0.85rem;
+    }
+
+    .card .mini-note {
+      margin-top: 0.8rem;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      color: #e7f0ff;
+    }
+
+    .card .info-cta-wrap {
+      margin-top: 1.05rem;
+    }
+
+    .card .reassurance {
+      margin-top: 0.7rem;
+      font-size: 0.84rem;
+      line-height: 1.45;
+      color: rgba(242, 246, 255, 0.72);
     }
 
     .card ul {
@@ -501,8 +589,21 @@
         bottom: 18%;
       }
 
+      .main-title {
+        top: -4.6rem;
+      }
+
       .details::before {
         background-position: 60% center;
+      }
+
+      .hero-lower {
+        bottom: 4rem;
+        width: min(94vw, 760px);
+      }
+
+      .hero-lower .hero-copy {
+        font-size: clamp(0.92rem, 3vw, 1rem);
       }
     }
 
@@ -667,7 +768,11 @@
 
     <div class="main-title" aria-live="polite">
       <h1>IDS 2935: All Too Well: Understanding Relationships through Taylor Swift</h1>
-      <p>Quest 1: How Stories Shape Us</p>
+    </div>
+
+    <div class="hero-lower" aria-label="Course quick details and actions">
+      <p class="tagline">Quest 1 (Humanities) &bull; Fall 2026 &bull; In-person</p>
+      <p class="hero-copy">Explore how interpersonal communication shapes love, friendship, identity, conflict, and repair&mdash;using Taylor Swift&rsquo;s music, public persona, and fandom as a sustained case study.</p>
     </div>
 
     <div class="scroll-indicator">Scroll for more</div>
@@ -677,40 +782,37 @@
     <div class="leaf-layer" id="leaf-layer" aria-hidden="true"></div>
     <div class="details-inner">
       <article class="card wide">
-        <h2>Course Description</h2>
-        <p>In an age when love, friendship, and family life unfold not only in person but also across screens, lyrics, and timelines, this course explores how interpersonal communication shapes the ways we create, sustain, and make sense of our closest relationships. Using the music, public persona, and fandom of Taylor Swift as a sustained case study, we will explore how individuals use messages to express emotion, perform identity, negotiate intimacy, and manage relational change in a mediated culture.</p>
-        <p>The course centers on intimate (romantic) relationships and friendships, examining both their unique dynamics and the ways they intersect in everyday life. Other close relationships, like those in families and workplaces, are also part of the course. While valuable, they&rsquo;re compared to romantic and friendship contexts to show similarities, contrasts, and influences among different closeness types.</p>
-        <p>Students will analyze how communication functions as the medium through which connection, affection, and identity are negotiated both in person and online. Through lyrical and narrative analysis, we will consider how the stories we tell about love shape the ways we experience it in real life.</p>
-        <p>Topics include emotion and self-presentation, relationship formation and maintenance, conflict and repair, and the ethics of vulnerability and privacy in contemporary relational life. Special attention will be given to digital and parasocial relationships, examining how fan cultures and mediated intimacy influence interpersonal norms, expectations, and expressions of care.</p>
-        <p>Theoretical approaches covered in this course include Goffman&rsquo;s dramaturgical theory, Altman and Taylor&rsquo;s social penetration theory, Baxter&rsquo;s relational dialectics, Petronio&rsquo;s communication privacy management, and Gottman&rsquo;s conflict typologies, along with related frameworks from affection exchange, attachment, and relational maintenance research. Each week combines lecture and discussion, integrating interpersonal theory with applied examples drawn from music, media, and personal experience.</p>
+        <h2>What is this course?</h2>
+        <p>In a world where love and friendship unfold not only face-to-face but also across screens, lyrics, and timelines, this course explores how interpersonal communication shapes our closest relationships.</p>
+        <p>Using Taylor Swift&rsquo;s music, public persona, and fandom as a sustained case study, we&rsquo;ll examine how people communicate emotion, perform identity, negotiate intimacy, manage conflict, and navigate change&mdash;both in person and online.</p>
       </article>
 
       <article class="card">
-        <h2>Class Meetings</h2>
-        <ul class="dotless">
-          <li>Fall 2026</li>
-          <li>In-Person</li>
-          <li><strong>Lecture (Instructor-Led):</strong> Mondays &amp; Wednesdays, Period 6 (12:50-1:40 p.m.)</li>
-          <li>Weimer 1064</li>
-          <li><strong>Breakout / Discussion Sections (GA-Led):</strong> Fridays, Period 6 (12:50-1:40 p.m.)</li>
-          <li>Turlington 2318 or Turlington 2306</li>
-          <li>(Sections assigned)</li>
-        </ul>
-      </article>
-
-      <article class="card">
-        <h2>Quest and General Education Credit</h2>
+        <h2>Course at a glance</h2>
         <ul>
-          <li>Quest 1</li>
-          <li>Humanities</li>
-          <li>Writing Requirement (WR) 2000 words</li>
+          <li>Fall 2026 &bull; In-person</li>
+          <li>Lecture: Mon &amp; Wed, 12:50&ndash;1:40 p.m. (Period 6)</li>
+          <li>Discussion: Fri, 12:50&ndash;1:40 p.m. (Period 6) &bull; sections assigned</li>
+          <li>Lecture location: Weimer 1064</li>
+          <li>Discussion locations: Turlington 2318 or 2306</li>
+          <li>Quest 1 (Humanities) &bull; Writing Requirement: 2,000 words (WR)</li>
         </ul>
-        <p>This course accomplishes the Quest and General Education objectives of the subject areas listed above. A minimum grade of C is required for Quest and General Education credit. Courses intended to satisfy Quest and General Education requirements cannot be taken S-U.</p>
+      </article>
+
+      <article class="card">
+        <h2>What we&rsquo;ll explore</h2>
+        <ul>
+          <li>Emotion, self-presentation, and identity</li>
+          <li>Relationship beginnings, maintenance, and endings</li>
+          <li>Conflict styles, repair, and forgiveness</li>
+          <li>Disclosure, boundaries, and privacy ethics</li>
+          <li>Digital intimacy, parasocial relationships, and fan culture</li>
+        </ul>
       </article>
 
       <article class="card wide">
-        <h2>Essential Questions</h2>
-        <p class="callout">Ultimately, this course invites students to engage both intellectually and reflectively with the essential questions of this course:</p>
+        <h2>Essential questions</h2>
+        <p class="callout">Together we&rsquo;ll ask:</p>
         <ul>
           <li>How do we communicate vulnerability and power in close relationships?</li>
           <li>What can popular music teach us about connection, conflict, and repair?</li>
@@ -719,47 +821,39 @@
       </article>
 
       <article class="card">
-        <h2>Course Objectives</h2>
-        <p>By the end of this course, students will be able to:</p>
+        <h2>What you&rsquo;ll do</h2>
         <ul>
-          <li>Explain how interpersonal communication functions as a process that creates and maintains intimate relationships across contexts.</li>
-          <li>Apply theories such as self-presentation, social penetration, relational dialectics, and communication privacy management to analyze both mediated and real-world relationship dynamics.</li>
-          <li>Evaluate how popular narratives, especially through Taylor Swift&rsquo;s music, persona, and fandom, reflect and shape cultural expectations about love, gender, emotion, and authenticity.</li>
-          <li>Analyze the communication of intimacy, conflict, and repair in romantic, familial, and friendship contexts using interpersonal research and theory.</li>
-          <li>Reflect on their own relational choices and communication patterns through analytical and creative expression, connecting scholarly concepts to lived experience in understanding what it means to relate &ldquo;all too well.&rdquo;</li>
+          <li>Analyze lyrics, media, and relational narratives through interpersonal theory</li>
+          <li>Apply concepts like social penetration, relational dialectics, and communication privacy management</li>
+          <li>Write analytically and reflectively (meets UF WR requirement)</li>
+          <li>Complete discussion-based activities and a final project with creative or analytical options</li>
         </ul>
       </article>
 
       <article class="card">
-        <h2>Required Readings and Works + Materials</h2>
-        <p>There are no required textbooks for this course. All readings, song lyrics, and media materials will be provided through Canvas. Students are expected to access streaming or publicly available versions of assigned Taylor Swift songs, interviews, and media (e.g., Miss Americana, official YouTube videos, or Taylor&rsquo;s Version releases).</p>
-        <p><strong>Required Materials:</strong></p>
+        <h2>Materials</h2>
+        <p>No textbooks required. Readings and educational media are provided in Canvas.</p>
         <ul>
-          <li>Regular access to a music streaming platform (Spotify, Apple Music, YouTube, etc.) to listen to assigned Taylor Swift works.</li>
-          <li>Access to Canvas for weekly readings, lyrics, and discussion prompts.</li>
-          <li>All other readings and works are available in Canvas.</li>
+          <li>Access to a music streaming platform (Spotify/Apple Music/YouTube)</li>
+          <li>Canvas access for readings, lyric analysis, and prompts</li>
         </ul>
-        <p><strong>Suggested Materials:</strong></p>
-        <ul>
-          <li>Access to Netflix (Miss Americana documentary, will also be shown in class).</li>
-          <li>Access to Disney+ (&lsquo;Eras Tour&rsquo; Documentary and &lsquo;Final Show&rsquo; Concert Film, will also be shown in class.)</li>
-        </ul>
+        <p class="mini-note">Suggested: Netflix (Miss Americana) and Disney+ (Eras Tour films) &mdash; clips also shown in class.</p>
       </article>
 
       <article class="card wide">
-        <h2>Description of Graded Work</h2>
-        <p>This course integrates theory, writing, and applied analysis to help students think critically about how interpersonal communication shapes love, identity, and close relationships. Through a sequence of connected assignments, students will engage both intellectually and personally with scholarly and cultural texts, developing skills in analytical writing, experiential inquiry, and oral communication. Each project is designed to foster reflection and creativity while encouraging students to connect communication theory to their own relational experiences. By writing, analyzing, and presenting, students will learn to interpret how communication creates, sustains, and transforms intimacy in romantic, friendship, and family contexts.</p>
-      </article>
-
-      <article class="card wide">
-        <h3>For more information</h3>
-        <p>Reach out to Dr. Benjamin Gaddis at <a href="mailto:Benjamin.gaddis@ufl.edu">Benjamin.gaddis@ufl.edu</a></p>
+        <h2>Need more information?</h2>
+        <p><strong>Dr. Benjamin Gaddis</strong><br />William &amp; Grace Dial Center for Speech and Communication Studies</p>
+        <p>If you&rsquo;d like more information about this course, including the syllabus, assignments, or expectations, please use the form below. This is the best way to request details or ask questions.</p>
+        <p class="info-cta-wrap">
+          <a class="hero-btn primary" href="https://forms.office.com/r/W7x0Raphvg" target="_blank" rel="noopener noreferrer" aria-label="Request more information about IDS 2935 All Too Well">Request more information</a>
+        </p>
+        <p class="reassurance">Submitting this form does not commit you to enrolling.</p>
       </article>
     </div>
 
     <footer class="site-disclaimer" aria-label="Disclaimer">
       <strong>Disclaimer</strong><br />
-      This is an independent educational course inspired by themes, storytelling, and cultural impact found in the music and lyrics of Taylor Swift. All references are used for scholarly discussion and instructional purposes. This course and website are not affiliated with, endorsed by, or sponsored by Taylor Swift or her representatives.
+      This is an independent educational course inspired by themes, storytelling, and cultural impact found in the music and lyrics of Taylor Swift. All references are used for scholarly discussion and instructional purposes. This course and website are not affiliated with, endorsed by, or sponsored by Taylor Swift or her representatives. Song lyrics referenced on this site are the property of their respective rights holders.
     </footer>
   </section>
   </main>
